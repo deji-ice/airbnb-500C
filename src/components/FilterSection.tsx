@@ -5,8 +5,8 @@ import { tabImages } from "../assets/data";
 const FilterSection = () => {
   return (
     <div className=" flex items-center justify-between pt-8 px-8">
-      <div className="flex-[9] flex items-center gap-10 ">
-        <BiChevronLeft className="text-2xl border rounded-full cursor-pointer text-black" />
+      <div className=" flex items-center gap-5 ">
+        <BiChevronLeft className="text-3xl border rounded-full cursor-pointer text-black" />
 
         <div className=" flex items-center gap-12">
           {tabImages?.map((i, index) => (
@@ -21,9 +21,9 @@ const FilterSection = () => {
           ))}
         </div>
 
-        <BiChevronRight className="text-2xl cursor-pointer   border rounded-full text-black" />
+        <BiChevronRight className="text-3xl cursor-pointer   border rounded-full text-black" />
       </div>
-      <div className=" flex flex-[3] items-center gap-4">
+      <div className=" flex  items-center gap-4">
         <button className=" text-xs border  font-semibold  rounded-xl border-slate-300 p-3 flex items-center justify-center gap-2">
           <LuSettings2 className='text-lg' /> Filters
         </button>
