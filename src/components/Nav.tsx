@@ -7,7 +7,6 @@ import { useState } from "react";
 const Nav = () => {
   const [show, setShow] = useState<boolean>(false);
 
-  const handleShow = () => {};
 
   return (
     <>
