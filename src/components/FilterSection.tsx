@@ -24,12 +24,11 @@ const FilterSection = () => {
         <BiChevronRight className="text-2xl cursor-pointer   border rounded-full text-black" />
       </div>
       <div className=" flex flex-[3] items-center gap-4">
-        <button className=" text-sm border rounded-xl border-slate-300 p-3 flex items-center justify-center gap-2">
-          {" "}
-          <LuSettings2 /> Filters
+        <button className=" text-xs border  font-semibold  rounded-xl border-slate-300 p-3 flex items-center justify-center gap-2">
+          <LuSettings2 className='text-lg' /> Filters
         </button>
-        <span className=" text-sm p-3 border rounded-xl border-slate-300 ">
-          Display tottal before taxes
+        <span className=" text-xs p-3 border font-semibold  rounded-xl border-slate-300 ">
+          Display total before taxes
         </span>
       </div>
     </div>
