@@ -4,11 +4,13 @@ import { tabImages } from "../assets/data";
 
 const FilterSection = () => {
   return (
-    <div className=" flex items-center justify-between pt-8 px-8">
-      <div className=" flex items-center gap-5 ">
-        <BiChevronLeft className="text-3xl border rounded-full cursor-pointer text-black" />
+    <div className=" fixed md:top-20 md:w-screen top-[78px] z-30 drop-shadow-md bg-white flex items-center overflow-x-scroll scrollbar-hide justify-between pt-8 md:pb-5 px-8">
+      <div className="  relative flex items-center gap-5 ">
+        <div className=" bg-gradient-to-r  from-[#ffffff]  z-20 h-16  w-[5rem] absolute -left-[24px] " />
+        <div className=" bg-gradient-to-l  from-[#ffffff]  z-20 h-16  w-[5rem] absolute -right-[24px]  " />
+        <BiChevronLeft className="text-3xl hidden md:flex z-20 border rounded-full cursor-pointer text-black" />
 
-        <div className=" flex items-center gap-12">
+        <div className="relative cursor-pointer flex gap-16 w-[80%] md:w-auto md:gap-12   justify-center overflow-x-clip scrollbar-hide items-center">
           {tabImages?.map((i, index) => (
             <div className="flex flex-col items-center cursor-pointer justify-center">
               <img
@@ -21,11 +23,11 @@ const FilterSection = () => {
           ))}
         </div>
 
-        <BiChevronRight className="text-3xl cursor-pointer   border rounded-full text-black" />
+        <BiChevronRight className="text-3xl hidden md:flex z-20 cursor-pointer border rounded-full text-black" />
       </div>
-      <div className=" flex  items-center gap-4">
+      <div className=" hidden md:flex items-center gap-4">
         <button className=" text-xs border  font-semibold  rounded-xl border-slate-300 p-3 flex items-center justify-center gap-2">
-          <LuSettings2 className='text-lg' /> Filters
+          <LuSettings2 className="text-lg" /> Filters
         </button>
         <span className=" text-xs p-3 border font-semibold  rounded-xl border-slate-300 ">
           Display total before taxes

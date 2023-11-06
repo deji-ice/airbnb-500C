@@ -1,34 +1,19 @@
 import { useEffect, useState } from "react";
 import { Property } from "../assets/data";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import { BsFillHeartFill} from "react-icons/bs";
 
 interface Card {
   data: Property[];
 }
 
 const Card: React.FC<Card> = ({ data }) => {
-  // const [propertyIndex, setPropertyIndex] = useState<number>(0);
-  // const [imageIndex, setImageIndex] = useState<number>(0);
-  // const currentImages = data.map((data) => {
-  //   return data.images;
-  // });
-  // const currentImage = currentImages.map((data) => data);
-
-  // const cuu = currentImage[currentImageIndex];
-  // console.log(cuu[currentImageIndex]);
-
   const [currentImageIndexes, setCurrentImageIndexes] = useState(
     data.map(() => 0)
   );
-  const [hidden, setHidden] = useState<boolean>(false)
 
 
-  useEffect(()=>{
-console.log("first")
-  },[hidden])
-
-
-  const nextImage = (propertyIndex) => {
+  const nextImage = (propertyIndex: number) => {
     const property = data[propertyIndex];
     const newIndexes = [...currentImageIndexes];
     if (newIndexes[propertyIndex] < property.images.length - 1) {
@@ -39,7 +24,7 @@ console.log("first")
 
 
 
-  const previousImage = (propertyIndex) => {
+  const previousImage = (propertyIndex: number) => {
     const newIndexes = [...currentImageIndexes];
     if (newIndexes[propertyIndex] > 0) {
       newIndexes[propertyIndex]--;
@@ -49,35 +34,6 @@ console.log("first")
   return (
     <>
       {data?.map((item, propertyIndex) => (
-        //   <div key={item.id} className="bg-white p-4 shadow-md rounded-md">
-        //   <h2>{item.price}</h2>
-        //   <div className="max-h-48 overflow-y-auto">
-        //     <img
-        //       src={item.images[currentImageIndexes[propertyIndex]]}
-        //       alt={`Image ${currentImageIndexes[propertyIndex]}`}
-        //       className="h-48 w-auto mx-auto"
-        //     />
-        //   </div>
-        //   <div className="flex justify-between mt-4">
-        //     <button
-        //       onClick={() => previousImage(propertyIndex)}
-        //       disabled={currentImageIndexes[propertyIndex] === 0}
-        //       className="bg-gray-300 p-2 rounded-md w-1/3"
-        //     >
-        //       Previous
-        //     </button>
-        //     <button
-        //       onClick={() => nextImage(propertyIndex)}
-        //       disabled={
-        //         currentImageIndexes[propertyIndex] ===
-        //         item.images.length - 1
-        //       }
-        //       className="bg-blue-500 text-white p-2 rounded-md w-1/3"
-        //     >
-        //       Next
-        //     </button>
-        //   </div>
-        // </div>
         <div className="mt-5 flex flex-col" key={item.id}>
           <div className=" overflow-y-auto">
             <div className={`group/item  relative overflow-y-auto`} >
@@ -92,6 +48,7 @@ console.log("first")
                 }
                 className=" invisible group-hover/item:visible absolute top-1/2 right-2  transition duration-1000 ease-in-out   bg-white z-20 text-2xl border rounded-full cursor-pointer text-black"
               />
+              <BsFillHeartFill className='text-slate-800 hover:text-red-500 hover:opacity-100 cursor-pointer text-2xl opacity-50 z-20 absolute top-5 right-4' />
               <img
                 src={item.images[currentImageIndexes[propertyIndex]]}
                 alt={`Image ${currentImageIndexes[propertyIndex]}`}
