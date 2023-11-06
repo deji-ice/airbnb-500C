@@ -49,6 +49,11 @@ export const tabImages: Tabs[] = [
         name: "Islands",
         img: "https://a0.muscache.com/pictures/d7445031-62c4-46d0-91c3-4f29f9790f7a.jpg"
     },
+    {
+      name: "Islands",
+      img: "https://a0.muscache.com/pictures/d7445031-62c4-46d0-91c3-4f29f9790f7a.jpg"
+  },
+  
 
 
 ];
