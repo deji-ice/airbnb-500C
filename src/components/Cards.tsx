@@ -1,4 +1,4 @@
-import React from "react";
+
 import { airbnbData } from "../assets/data";
 import Card from "./Card";
 
