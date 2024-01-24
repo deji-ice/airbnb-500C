@@ -18,6 +18,7 @@ const FilterSection = () => {
             >
               <img className="h-6 text-[#717171] grayscale" src={i.img} />
               <p className="text-xs font-semibold">{i.name}</p>
+            
             </div>
           ))}
         </div>
